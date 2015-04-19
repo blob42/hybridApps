@@ -102,7 +102,7 @@ angular.module('hybridApps')
                   function draw() {
                       then = now - (delta % $scope.interval);
 
-                      // Drwaing here
+                      // Processing here
                       if ($scope.processing) {
                           for (var j=0; j<$scope.fib;j++) {
                             var i;
@@ -119,6 +119,7 @@ angular.module('hybridApps')
                           }
                       }
 
+                      // Drawing here
 
                       var pos = $(object).position();
 
