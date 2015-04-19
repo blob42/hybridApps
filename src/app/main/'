@@ -1,0 +1,32 @@
+<div layout="column" class="slide slide-36">
+    <!--http://www.slideshare.net/HyungwookLee/android-chromium-rendering-pipeline-->
+
+    <div  flex="10">
+        <h3 style="margin-left: 10px; margin-top: 10px">Future</h3>
+    </div>
+    <div flex="5" layout="row" layout-align="center center">
+        <h2>New Browser Engines</h2>
+    </div>
+
+    <div flex="20">
+
+    </div>
+
+    <div style="text-align: center" flex layout="row" layout-align="center start">
+        <div flex="33">
+            <img style="width: 500px" src="/assets/images/servo.jpg">
+        </div>
+
+        <div  flex="33">
+            <img style="width: 300px" src="/assets/images/blink.png">
+        </div>
+
+        <div flex="33">
+            <img style="width: 300px" src="/assets/images/spartan.png">
+        </div>
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://sc5.io/posts/using-reacts-jsx-with-coffeescript-and-sublime-text -->
+<html class=" js touch history csstransforms3d csstransitions svg positionfixed no-android no-ios no-wp no-ie overflowscroll no-ipad no-ipad3plus"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="utf-8">
+  <title>SC5 - Using React's JSX with CoffeeScript and Sublime Text</title>
+
+  <meta name="description" content="sc5.io">
+  <meta name="author" content="sc5">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="google-site-verification" content="y6R1l0y-v-gTPLR98ndaX3x99ktqhsHrnzlr89DRXXk">
+
+  <meta property="fb:app_id" content="391511784314846">
+  <meta property="og:title" content="Using React&#39;s JSX with CoffeeScript and Sublime Text">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://sc5.io/posts/using-reacts-jsx-with-coffeescript-and-sublime-text">
+  <meta property="og:image" content="http://sc5.io/blog/wp-content/uploads/2014/06/react.png">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="SC5">
+  <meta name="theme-color" content="#ef4942">
+
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="http://sc5.io/static/apple-touch-icon-72x72-precomposed.png">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://sc5.io/static/apple-touch-icon-72x72-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://sc5.io/static/apple-touch-icon-114x114-precomposed.png">
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://sc5.io/static/apple-touch-icon-144x144-precomposed.png">
+  <link rel="shortcut icon" href="http://sc5.io/static/favicon.ico">
+
+  <link href="./react_files/css" rel="stylesheet" type="text/css">
+
+  <link rel="alternate" type="application/rss+xml" title="SC5 Blog RSS Feed" href="http://sc5.io/blog/feed/">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <style>
+    @font-face {
+      font-family: 'gthm_medium';
+      src: url('/fonts/gotham_rounded_medium-webfont.eot');
+      src: url('/fonts/gotham_rounded_medium-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/gotham_rounded_medium-webfont.woff2') format('woff2'),
+      url('/fonts/gotham_rounded_medium-webfont.woff') format('woff'),
+      url('/fonts/gotham_rounded_medium-webfont.ttf') format('truetype'),
+      url('/fonts/gotham_rounded_medium-webfont.svg#gotham_rnd_ssmmedium') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
+    }
+    @font-face {
+      font-family: 'gthm_book';
+      src: url('/fonts/gotham_rounded_book-webfont.eot');
+      src: url('/fonts/gotham_rounded_book-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/gotham_rounded_book-webfont.woff2') format('woff2'),
+      url('/fonts/gotham_rounded_book-webfont.woff') format('woff'),
+      url('/fonts/gotham_rounded_book-webfont.ttf') format('truetype'),
+      url('/fonts/gotham_rounded_book-webfont.svg#gotham_rnd_ssmbook') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
+    }
+    @font-face {
+      font-family: 'nws_icon';
+      src: url('/fonts/nws_icon.eot?-ngavj3');
+      src: url('/fonts/nws_icon.eot?#iefix-ngavj3') format('embedded-opentype'),
+      url('/fonts/nws_icon.woff?-ngavj3') format('woff'),
+      url('/fonts/nws_icon.ttf?-ngavj3') format('truetype'),
+      url('/fonts/nws_icon.svg?-ngavj3#nws_icon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'linkedin_icon';
+      src: url('/fonts/linkedin_icon.eot?-ngavj3');
+      src: url('/fonts/linkedin_icon.eot?#iefix-ngavj3') format('embedded-opentype'),
+      url('/fonts/linkedin_icon.woff?-ngavj3') format('woff'),
+      url('/fonts/linkedin_icon.ttf?-ngavj3') format('truetype'),
+      url('/fonts/linkedin_icon.svg?-ngavj3#linkedin_icon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+  </style>
+  
+  <link rel="stylesheet" href="http://sc5.io/css/styles-0.1.1.css">
+  
+  
+
+  <!-- Start Visual Website Optimizer Asynchronous Code -->
+  <script id="facebook-jssdk" src="./react_files/sdk.js"></script><script async="" src="http://www.google-analytics.com/analytics.js"></script><script id="hs-analytics" src="http://js.hs-analytics.net/analytics/1429382400000/469635.js"></script><script type="text/javascript">
+    var _vwo_code=(function(){
+      var account_id=83397,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+        // DO NOT EDIT BELOW THIS LINE
+        f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+      </script><style type="text/css"></style><script src="http://dev.visualwebsiteoptimizer.com/j.php?a=83397&u=http%3A%2F%2Fsc5.io%2Fposts%2Fusing-reacts-jsx-with-coffeescript-and-sublime-text&r=0.552155762212351" type="text/javascript"></script>
+      <!-- End Visual Website Optimizer Asynchronous Code -->
+
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main-0.1.1" src="./react_files/main-0.1.1.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+    <body style="zoom: 100%;">
+      <div id="mula-timer" class="disabled"><table><tbody><tr><td>Load</td><td>2451ms</td></tr><tr><td>Last render</td><td>2663ms</td></tr><tr><td>Average render</td><td>2663ms</td></tr><tr><td>Renders</td><td>1</td></tr><tr><td>Re-renders</td><td>0</td></tr></tbody></table></div>
+      <div id="layout">
+        <div id="menu-container"><div><div id="menu-link" class="menu-link"><a class="spa-link clickable" href="http://sc5.io/"><img width="60" height="60" src="./react_files/sc5logo-fat.svg" alt="SC5"></a><div class="menu-link-button clickable"><span class="icon-menu">Menu</span></div></div><div id="menu" class="menu"><ul><li><a class="spa-link clickable" href="http://sc5.io/"><img width="60" height="60" class="icon-sc5" alt="SC5" src="./react_files/sc5logo-fat.svg"></a></li><li><a class="spa-link clickable selected" href="http://sc5.io/posts/first_post">Blog</a></li><li><a class="spa-link clickable" href="http://sc5.io/pages/solutions">Our Solutions</a></li><li><a class="spa-link clickable" href="http://sc5.io/pages/careers">Careers</a></li><li><a class="spa-link clickable" href="http://sc5.io/pages/get-in-touch">Get In Touch</a></li></ul><div class="menu-additional-content"><a class="clickable" href="https://twitter.com/sc5io" target="_blank"><span class="icon-twitter"></span></a><a class="clickable" href="https://www.facebook.com/sc5.io" target="_blank"><span class="icon-face"></span></a><a class="clickable" href="https://www.linkedin.com/company/sc5" target="_blank"><span class="icon-linkedin2"></span></a></div></div></div></div>
+        <div id="content-container">
+          <div id="main">
+          <div id="contact-us"><a href="http://sc5.io/posts/using-reacts-jsx-with-coffeescript-and-sublime-text#" class="contact-title">
+    <div class="contact-heading">Contact Us</div>
+</a>
+<form class="contact-form" action="http://sc5.io/posts/using-reacts-jsx-with-coffeescript-and-sublime-text#">
+    <p class="feedback"></p>
+	<input name="name" type="text" placeholder="Name" required="">
+	<input name="email" type="email" placeholder="Email" required="">
+	<textarea name="message" rows="4" placeholder="Message"></textarea>
+	<input type="submit" value="Send message">
+	<input type="button" value="Subscribe to SC5 News!">
+</form></div><div id="post-page" class="page light"><div class="page-content">
+    <div class="page-wrapper">
+        <div class="posts-container" style="min-height: 968px">
+            <div class="item current" id="wp-post-2314" style="min-height: 968px" data-href="/posts/using-reacts-jsx-with-coffeescript-and-sublime-text">
+    <div class="item-container">
+        
+
+        
+
+        <div class="content">
+            <div class="header">
+                <h1 class="post-subhead">Using React's JSX with CoffeeScript and Sublime Text</h1>
+                <div class="meta"><span class="author">Lari Hoppula | </span>
+                <span class="time">
+                    <time datetime="[object Object]">
+                    <span class="month">Jun</span>
+                        <span class="day">10</span>
+                        <span class="year">2014</span>
+                    </time>
+                </span>
+                </div>
+                <div class="social-buttons"><!--<div class="fb-like" data-href="http://sc5.io/posts/using-reacts-jsx-with-coffeescript-and-sublime-text" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>--></div>
+            </div>
+<!--             <div class="featured-image"><img src="" alt="Featured image" /></div> -->
+            <div class="item-content"><p><a href="./react_files/blog-wp-content-uploads-2014-06-react.png" data-lightbox="image"><img src="./react_files/blog-wp-content-uploads-2014-06-react$1120s.png" alt="react" width="250" height="250" class="mula-adaptive alignnone size-full wp-image-2339"></a>
+</p><p style="color: #000000;">
+<a style="color: #205caa;" href="http://facebook.github.io/react/" title="React.js">React.js</a> has been gaining ground lately in JavaScript world, replacing many libraries traditionally used for view manipulation. It embraces one-way data flow and separation of view component’s data (props) and its internal state. For more detailed explanation of React’s strengths, <a style="color: #205caa;" href="https://www.youtube.com/watch?v=DgVS-zXgMTk">check out Pete Hunt’s excellent presentation from JSConf.Asia 2013</a> and <a style="color: #205caa;" href="http://facebook.github.io/react/docs/thinking-in-react.html">Thinking in React article</a> from React’s docs.</p>
+<p style="color: #000000;">
+<a style="color: #205caa;" href="http://facebook.github.io/react/docs/jsx-in-depth.html" title="JSX">JSX</a> is XML-syntaxed markup that is embedded to React component’s render method. React JSX compiler transforms embedded JSX markup to React.DOM.* calls in compiled JavaScript. Writing JSX is easy for anyone who knows HTML and it’s certainly much easier to grasp than writing nested React.DOM.* calls manually.</p>
+<h2 id="problem-coffeescript-jsx-dont-play-well-with-each-other" style="font-weight: 300; color: #000000;">Problem: CoffeeScript + JSX don’t play well with each other</h2>
+<p style="color: #000000;">Until recently, you were forced to write your CoffeeScript React component renders by&nbsp;<a style="color: #205caa;" href="http://www.rigelgroupllc.com/blog/2013/11/19/using-reactjs-with-coffeescript/">shelling out to JS with backticks</a>&nbsp;or&nbsp;<a style="color: #205caa;" href="http://blog.vjeux.com/2013/javascript/react-coffeescript.html">desugaring React.DOM to create lightweight DSL</a>.</p>
+<p style="color: #000000;">Luckily for us wanting the real deal,&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf">James Friend</a>&nbsp;has created&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-react-transform">CoffeeScript transformer for JSX</a>&nbsp;which allows you to write that nicely formatted JSX also in your .coffee files.</p>
+<p style="color: #000000;"><a style="color: #205caa;" href="https://github.com/jsdf/coffee-react-transform">coffee-react-transform</a>&nbsp;can be used through&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-react-transform#cli">CLI</a>&nbsp;or&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-react-transform#api">API</a>. If you want CoffeeScript executable that understands CJSX, you can use&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-react">coffee-react</a>&nbsp;from the same author.</p>
+<h2 id="requiring-cjsxified-coffee-files-in-node" style="font-weight: 300; color: #000000;">Requiring CJSXified .coffee files in node</h2>
+<p style="color: #000000;">If you want to use the vanilla coffee executable to require CJSX enhanced files, you can use&nbsp;<a style="color: #205caa;" href="https://github.com/SimonDegraeve/node-cjsx">node-cjsx</a>&nbsp;module, which transparently compiles CJSX with&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-react-transform">coffee-react-transform</a>&nbsp;before second compilation step with regular coffee binary. Just add&nbsp;<code>require('node-cjsx').transform()</code>&nbsp;to your app and you’re good to go.</p>
+<h2 id="sublime-text" style="font-weight: 300; color: #000000;">Sublime Text</h2>
+<p style="color: #000000;">If you use&nbsp;<a style="color: #205caa;" href="http://www.sublimetext.com/">Sublime Text</a>, there’s a way to make working with CJSX much more enjoyable.</p>
+<p style="color: #000000;">First, you can install&nbsp;<a style="color: #205caa;" href="https://github.com/reactjs/sublime-react">sublime-react</a>&nbsp;which just had&nbsp;<a style="color: #205caa;" href="https://github.com/reactjs/sublime-react/pull/9">CJSX support committed&nbsp;in</a> by&nbsp;<a style="color: #205caa;" href="https://github.com/tgriesser">Tim Griesser</a>. It provides syntax highlighting and&nbsp;<a style="color: #205caa;" href="https://github.com/reactjs/sublime-react#documentation-of-available-snippets-jsx">autocompletion snippets</a>&nbsp;for CJSX.</p>
+<p style="color: #000000;">Second, you can change&nbsp;<a style="color: #205caa;" href="https://github.com/aponxi/sublime-better-coffeescript">Better CoffeeScript</a>&nbsp;plugin to use previously mentioned&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-react">coffee-react</a>&nbsp;as its coffee executable. Easy way to do that is to create symbolic link from your cjsx binary (e.g.&nbsp;<em>~/.nvm/v0.10.28/bin/cjsx</em>) to<em>~/bin/coffee</em>&nbsp;and setting&nbsp;<em>~/bin</em>&nbsp;as&nbsp;<strong><code>"binDir"</code></strong>&nbsp;in&nbsp;<em>CoffeeScript.sublime-settings</em>. Also remember to change<strong>`“envPATH”</strong>&nbsp;in that same settings file to a directory containing node executable (e.g.&nbsp;<em>~/nvm/v0.10.28/bin</em>).</p>
+<p style="color: #000000;"><strong>NOTE:</strong>&nbsp;<em>Replace ~ with your home dir, so e.g. ~/bin becomes /Users/hoppula/bin, Sublime does not seem to understand ~/ in config files</em>.</p>
+<p style="color: #000000;">Now you’ll get a nice preview of compiled JavaScript when you press&nbsp;<code>ALT+SHIFT+D</code>&nbsp;while editing your component’s .coffee file.</p>
+<h3 id="cjsx-to-javascript-conversion-example" style="font-weight: 300; color: #000000;">CJSX to JavaScript conversion example</h3>
+<h5 id="coffeescript-source" style="font-weight: 300; color: #000000;">CoffeeScript source</h5>
+<div class="highlight" style="color: #000000;">
+<pre><code class="coffeescript"><span class="c1" style="font-style: italic; color: #999988;"># @cjsx React.DOM</span>
+<span class="nv" style="color: #008080;">React = </span><span class="nx">require</span> <span class="s" style="color: #dd1144;">'react'</span>
+
+<span class="nv" style="color: #008080;">Team = </span><span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span>
+  <span class="nv" style="color: #008080;">render: </span><span class="nf" style="font-weight: bold; color: #990000;">-&gt;</span>
+    <span class="o" style="font-weight: bold;">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o" style="font-weight: bold;">=</span><span class="s" style="color: #dd1144;">"team"</span><span class="o" style="font-weight: bold;">&gt;</span>
+      <span class="o" style="font-weight: bold;">&lt;</span><span class="nx">div</span><span class="o" style="font-weight: bold;">&gt;</span><span class="p">{</span><span class="nx">@props</span><span class="p">.</span><span class="nx">team</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o" style="font-weight: bold;">&lt;/</span><span class="nx">div</span><span class="o" style="font-weight: bold;">&gt;</span>
+      <span class="o" style="font-weight: bold;">&lt;</span><span class="nx">div</span><span class="o" style="font-weight: bold;">&gt;</span><span class="p">{</span><span class="nx">@props</span><span class="p">.</span><span class="nx">team</span><span class="p">.</span><span class="nx">city</span><span class="p">}</span><span class="o" style="font-weight: bold;">&lt;/</span><span class="nx">div</span><span class="o" style="font-weight: bold;">&gt;</span>
+    <span class="o" style="font-weight: bold;">&lt;/</span><span class="nx">div</span><span class="o" style="font-weight: bold;">&gt;</span>
+
+<span class="nv" style="color: #008080;">module.exports = </span><span class="nx">Team</span>
+</code></pre>
+</div>
+<h5 id="compiled-javascript" style="font-weight: 300; color: #000000;">Compiled JavaScript</h5>
+<div class="highlight" style="color: #000000;">
+<pre><code class="javascript"><span class="kd" style="font-weight: bold;">var</span> <span class="nx">React</span><span class="p">,</span> <span class="nx">Team</span><span class="p">;</span>
+
+<span class="nx">React</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1" style="color: #dd1144;">'react'</span><span class="p">);</span>
+
+<span class="nx">Team</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">render</span><span class="o" style="font-weight: bold;">:</span> <span class="kd" style="font-weight: bold;">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k" style="font-weight: bold;">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">({</span>
+      <span class="s2" style="color: #dd1144;">"className"</span><span class="o" style="font-weight: bold;">:</span> <span class="s2" style="color: #dd1144;">"team"</span>
+    <span class="p">},</span> <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="kc" style="font-weight: bold;">null</span><span class="p">,</span> <span class="k" style="font-weight: bold;">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">team</span><span class="p">.</span><span class="nx">name</span><span class="p">),</span>
+    <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="kc" style="font-weight: bold;">null</span><span class="p">,</span> <span class="k" style="font-weight: bold;">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">team</span><span class="p">.</span><span class="nx">city</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">Team</span><span class="p">;</span>
+</code></pre>
+</div>
+<h2 id="browserify" style="font-weight: 300; color: #000000;">Browserify</h2>
+<p style="color: #000000;"><a style="color: #205caa;" href="https://github.com/jsdf">James Friend</a>&nbsp;has also written&nbsp;<a style="color: #205caa;" href="https://github.com/jsdf/coffee-reactify">coffee-reactify</a>&nbsp;browserify plugin, so you can easily use that same view code when rendering on server and in browser.</p>
+<p><em>This blog post is an extended version of story that was originally published on <a href="http://lari.hoppula.com/2014/06/10/using-reacts-jsx-with-coffeescript-and-sublime-text/">my personal blog</a></em>.</p>
+</div>
+        </div>
+        
+    </div>
+</div>
+        </div>
+	    <div class="left-menu">
+	        <div class="left-menu-inner">
+                <div id="post-list">
+    <h1>More from our blog</h1>
+
+    
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/nokian-ja-alcatel-lucentin-fuusio-ennakoi-iotn-tulemista" data-id="4474">Nokian ja Alcatel-Lucentin fuusio ennakoi IoT:n tulemista</a>
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/pelillinen-strategiaopas-verkkoon-kuukaudessa" data-id="4461">Pelillinen strategiaopas verkkoon kuukaudessa</a>
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/tuleeko-alykelloista-oikea-sovellusalusta" data-id="4427">Tuleeko älykelloista oikea sovellusalusta?</a>
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/sc5sta-stadin-atk-apu" data-id="4406">SC5:stä Stadin ATK-apu!</a>
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/miten-sossit-digitaalisen-liiketoiminnan-rakentamisen" data-id="4386">Miten sössit digitaalisen liiketoiminnan rakentamisen</a>
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/pikaviesteista-syntyy-uusi-myyntikanava" data-id="4283">Pikaviesteistä syntyy uusi myyntikanava</a>
+    
+    <a class="spa-link clickable immediate frombottom " href="http://sc5.io/posts/kuukausien-sykleista-tunteihin-full-stack-kehityksella" data-id="4301">Kuukausien sykleistä tunteihin Full Stack -kehityksellä</a>
+    
+    
+    <a class="older" href="http://sc5.io/posts/using-reacts-jsx-with-coffeescript-and-sublime-text#" data-id="4474">Older posts</a>
+    
+
+</div>
+            </div>
+	    </div>
+    </div>
+</div>
+</div></div>
+        </div>
+        <footer id="footer"><section class="footer-contact"><a href="http://sc5.io/pages/get-in-touch">Get in touch</a> | <a href="http://sc5.io/pages/privacy">Privacy policy</a>
+</section></footer>
+      </div>
+      
+      <script data-main="/app/main-0.1.1.js" src="./react_files/require-0.1.1.js" async="" defer=""></script>
+
+      <!-- Start of Async HubSpot Analytics Code -->
+      <script type="text/javascript">
+        (function(d,s,i,r) {
+          if (d.getElementById(i)){return;}
+          var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+          n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/469635.js';
+          e.parentNode.insertBefore(n, e);
+        })(document,"script","hs-analytics",300000);
+      </script>
+      <!-- End of Async HubSpot Analytics Code -->
+
+      <!-- Google analytics and PageAd codes -->
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-27451947-1', 'auto');
+      </script>
+
+      <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 971659824;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+      </script>
+
+      <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script>
+
+      <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./react_files/KvoNGODIqPG.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./react_files/KvoNGODIqPG(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '391511784314846',
+            xfbml      : true,
+            version    : 'v2.1'
+          });
+        };
+
+        (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+     </script>
+     <noscript>
+      &lt;div style="display:inline;"&gt;
+        &lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/971659824/?value=0&amp;amp;guid=ON&amp;amp;script=0"&gt;
+      &lt;/div&gt;
+    </noscript>
+
+  
+  
+<style>.social-buttons,.icon-twitter,[href^="https://facebook.com/sharer.php?"],[href^="http://www.linkz.it/"],[href^="http://www.linkedin.com/shareArticle?"],[href^="http://www.linkbucks.com/referral/"],[href^="https://www.facebook.com/sharer/sharer.php?u="],[href^="https://www.facebook.com/sharer.php?"],[href^="http://www.facebook.com/sharer/sharer.php?"],[href^="http://www.facebook.com/sharer.php?"],[href^="http://www.facebook.com/share.php?u="],[href^="http://www.faceporn.net/free?"],[href^="https://twitter.com/share?"],[href^="https://twitter.com/intent/tweet?"],[href^="https://twitter.com/intent/retweet?tweet_id"],[href^="https://twitter.com/intent/follow?"],[href^="http://twitter.com/share?"],[href^="http://twitter.com/intent/tweet?"],[href^="http://twitter.com/intent/tweet/?url="],[href^="http://twitter.com/home?"],[href^="http://twitter.com/home/?"],[href^="http://twitter.com/?status="]
+{display:none !important;}</style><div id="lightboxOverlay" class="lightboxOverlay" style="width: 1905px; height: 4081px; display: block;"></div><div id="lightbox" class="lightbox" style="display: block; top: 50px; left: 0px;"><div class="lb-outerContainer" style="width: 258px; height: 258px;"><div class="lb-container"><img class="lb-image" src="./react_files/blog-wp-content-uploads-2014-06-react.png" style="display: block; width: 250px; height: 250px;"><div class="lb-nav" style="display: block;"><a class="lb-prev" href="" style="display: none;"></a><a class="lb-next" href="" style="display: none;"></a></div><div class="lb-loader" style="display: none;"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer" style="display: block; width: 258px;"><div class="lb-data"><div class="lb-details"><span class="lb-caption" style="display: none;"></span><span class="lb-number" style="display: none;"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

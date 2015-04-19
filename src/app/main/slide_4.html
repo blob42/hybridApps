@@ -1,0 +1,59 @@
+<div layout="row" class="slide slide-4">
+
+    <div flex="50" layout="row" layout-padding layout-align="center center">
+        <div flex="60" render fibonacci="slide4.fibonacci" framerate="slide4.framerate" processing="slide4.processing" class="render">
+            <div class="object">
+            </div>
+        </div>
+
+    </div>
+
+    <div style="height: 100%" flex="50" layout="column" layout-align="center center">
+        <div flex="20" layout="column" layout-align="end center">
+            <h3><span ng-class="{processing: slide4.processing}">Processing</span> + Rendering</h3>
+            <div style="text-align: center" flex layout="row" layout-fill layout-align="center center">
+                <div flex="50">
+                    <h4>{{interval}} ms</h4>
+                </div>
+                <div flex="50">
+                    <h4>{{slide4.framerate}} fps</h4>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 100%" flex="20" layout="row" >
+            <div flex="20" layout="row" layout-align="center center">
+                Slower Render
+            </div>
+            <div flex="60" layout="row" layout-align="center center">
+                <md-slider flex ng-model="slide4.framerate" min="1" max="60"></md-slider>
+            </div>
+            <div flex="20" layout="row" layout-align="center center">
+                Faster Render
+            </div>
+        </div>
+
+        <div ng-show="slide4.processing" style="width: 100%" flex="20" layout="row" >
+            <div flex="20" layout="row" layout-align="center center">
+                Fast Process
+            </div>
+            <div flex="60" layout="row" layout-align="center center">
+                <md-slider flex ng-model="slide4.fibonacci" min="1000" max="5000"></md-slider>
+            </div>
+            <div flex="20" layout="row" layout-align="center center">
+                Slow Process
+            </div>
+        </div>
+        <div flex="20" style="width: 100%" layout="row" layout-align="center start">
+            <md-button ng-click="toggleProcessing()" class="md-primary">
+                Toggle Processing
+            </md-button>
+        </div>
+    </div>
+
+    <!--<div flex layout="row" layout-padding layout-align="center center">-->
+
+
+    <!--</div>-->
+
+</div>

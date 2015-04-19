@@ -1,0 +1,629 @@
+
+/*Colors*/
+
+$purple: #9b7fe6;
+$yellow: #f3d27c;
+$green: #5fa050;
+
+$primary: $purple;
+$secondary: $purple;
+$big-li: 2.0em;
+$hybrid-color: $secondary;
+
+md-sidenav {
+    max-width: 80%;
+    width: 80%;
+}
+
+.md-sidenav-left {
+    max-width: 100%;
+    width: 100%;
+
+}
+
+
+html {
+  font-family: 'Droid Sans';
+  font-size: 16px;
+  overflow: hidden;
+    li {
+        list-style: none;
+        font-size: 1.5em;
+    }
+}
+
+a {
+    color: $purple;
+    font-size: .5em;
+}
+
+body {
+  color: #3D3D3D;
+}
+
+.pcejs {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: sans-serif;
+    /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+    border: 0px none;
+    padding: 0;
+}
+.pcejs-container { margin-top: 32px }
+/* macplus has mouse integration, so we can hide the host mouse */
+.pcejs-canvas {
+     cursor: none;
+     width: 70%;
+ }
+
+[layout=row] {
+  flex-direction: row;
+}
+
+md-content.slides {
+    width: 100%;
+    height: 100%;
+    /*UI VIEW*/
+    > div {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+    }
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+}
+
+/*alan turing */
+.slide-2 { 
+    background-image: url('/assets/images/turing_machine.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+/*GUI Macintosh*/
+.slide-3 { 
+    background-image: url('/assets/images/macintosh.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+}
+
+.slide-4, .nav-left {
+    .processing {
+        color: $yellow;
+    }
+    .render {
+        width: 400px;
+        height: 400px;
+        border: 1px solid lightgray;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .object {
+        width: 200px;
+        height: 200px;
+        top: 100px;
+        left: 100px;
+        border-radius: 100%;
+        background-color: lightblue;
+        position: absolute;
+    }
+}
+
+.slide-5 {
+    overflow-y: hidden;
+    .information-model {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/images/information_model.png');
+        background-size: 50% auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .information-software {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+    }
+
+    .manipulation {
+        > div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            &:first-child {
+                background-image: url('/assets/images/manipulation_model.png');
+                background-size: 50% auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+                left: 0px;
+            }
+
+            &:not(:first-child) {
+                left: 50%;
+            }
+        }
+    }
+}
+
+.slide-7 {
+    li {
+        line-height: 2em;
+        font-size: 2em;
+    }
+}
+
+.slide-10 {
+    @extend .slide-5;
+    .information, .manipulation, .communication {
+        > div:first-child {
+            background-size: 30% auto;
+        }
+        li {
+            font-size: 1.5em;
+            color: $primary;
+        }
+    }
+
+
+    .communication {
+        @extend .manipulation;
+
+
+        >div:first-child {
+
+            transition: all 100ms ease-in-out;
+            background-image: url('/assets/images/communication_model.png');
+            /*background-size: 50% auto;*/
+            /*background-position: center center;*/
+            /*background-repeat: no-repeat;*/
+            /*left: 0px;*/
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+        h1 {
+            color: $primary;
+        }
+    }
+
+}
+
+.slide-11 {
+    .bleeding {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-image: url('/assets/images/bleeding_eyes.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.slide-12 {
+    overflow-y: hidden;
+}
+
+.slide-13 {
+    li {
+        font-size: $big-li;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+}
+
+.slide-14 {
+
+    @extend .slide-12;
+}
+
+
+.slide-19 {
+    overflow-y: hidden;
+    .native-wrapper {
+        width: 30%;
+        height: 400px;
+        background-color: lightblue;
+        position: relative;
+        border-radius: 10px;
+
+        .browser-engine {
+            width: 80%;
+            height: 60%;
+            background-color: lightgreen;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, 0);
+
+        }
+    }
+}
+
+.slide-20 {
+    @extend .slide-19;
+    .hardware-bridge {
+        width: 80%;
+        height: 55%;
+        position: absolute;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, 0);
+    }
+
+    .native-wrapper {
+        width: 60%;
+
+        &.mobile {
+            width: 35%;
+        }
+    }
+
+    .browser-engine {
+        top: 50%;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .hybrid-bg {
+        background-color: $hybrid-color;
+    }
+
+    .hybrid-cl {
+        color: $hybrid-color;
+    }
+}
+
+.slide-21 {
+    background-image: url('/assets/images/steam-client.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    background-position: center center;
+}
+
+.slide-22 {
+    background-image: url('/assets/images/slack.png');
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    background-position: center center;
+}
+
+
+.slide-23 {
+    > div:first-child {
+        background-image: url('/assets/images/phonegap_vs_webview.png');
+        background-repeat: no-repeat;
+        background-size: auto 75%;
+        background-position: center center;
+    }
+
+    >div:not(:first-child) {
+        background-image: url('/assets/images/nw_vs_hybrid.png');
+        background-repeat: no-repeat;
+        background-size: auto 75%;
+        background-position: center center;
+
+    }
+
+}
+
+.slide-30 {
+
+
+    .render {
+        width: 150px;
+        height: 150px;
+        border: 1px solid lightgray;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .object {
+        width: 30px;
+        height: 30px;
+        top: 75px;
+        left: 0px;
+        border-radius: 100%;
+        background-color: lightblue;
+        position: absolute;
+    }
+
+    .rendering-container {
+        > div:nth-child(2) {
+            /*border: 2px dashed;*/
+        }
+    }
+
+    .cpu, .gpu{
+        position: relative;
+
+        .js, .rendering, .rendering-cpu, .rendering-gpu {
+            opacity: .7;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .js {
+        animation-name: js_color;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+    }
+
+    .rendering {
+        animation-name: rendering_color;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+        border: 2px solid transparent;
+    }
+
+    .rendering-screen {
+        animation-name: rendering_screen;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 4s;
+    }
+
+    .dom-update {
+
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: lightgray;
+        animation-name: dom_update;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+
+    }
+
+    .layout {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: lightgray;
+        animation-name: layout_render;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+    }
+
+    .paint {
+        border: 2px solid transparent;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: lightgray;
+        animation-name: paint_color;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+    }
+}
+
+@-webkit-keyframes paint_color {
+    0% {
+        background-color: lightgray;
+    }
+    45% {
+        background-color: lightgray;
+        transform: scale(1);
+    }
+    50% {
+        background-color: $green;
+        border: 2px solid transparent;
+        transform: scale(1.2);
+    }
+    75% {
+        border: 2px solid red;
+    }
+    100% {
+        background-color: lightgray;
+        border: 2px solid transparent;
+    }
+}
+
+.slide-31 {
+    overflow-x: hidden;
+    @extend .slide-30;
+    .cpu, .gpu {
+        position: relative;
+    }
+
+    .js {
+        height: 100% !important;
+        left: 3% !important;
+        transform: translateX(0%) !important;
+    }
+
+    .rendering-cpu {
+        height: 100% !important;
+        left: 3% !important;
+        transform: translateX(0%) !important;
+        animation-name: rendering_color_cpu;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+        border: 2px solid transparent;
+    }
+
+    .rendering-gpu {
+        height: 100% !important;
+        left: 100% !important;
+        transform: translateX(-100%) !important;
+        animation-name: rendering_color_gpu;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 6s;
+        border: 2px solid transparent;
+    }
+}
+
+.slide-32 {
+    @extend .slide-31;
+}
+
+.slide-37 {
+    >div:nth-child(2) {
+        background-image: url('/assets/images/gl_monolith.svg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: auto 100%;
+    }
+}
+
+.slide-38 {
+    >div:nth-child(2) {
+        background-image: url('/assets/images/gl_next.svg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: auto 100%;
+    }
+}
+
+@-webkit-keyframes dom_update {
+    20% {
+        background-color: lightgray;
+        transform: scale(1);
+    }
+    22% {
+        background-color: $purple;
+        transform: scale(1.2);
+    }
+    59% {
+        background-color: lightgray;
+    }
+}
+
+@-webkit-keyframes layout_render {
+    0% {
+
+        background-color: lightgray;
+        transform: scale(1);
+    }
+    30% {
+        background-color: lightgray;
+        transform: scale(1);
+    }
+    40% {
+        background-color: $purple;
+        transform: scale(1.2);
+    }
+    50% {
+        background-color: lightgray;
+    }
+}
+
+@-webkit-keyframes js_color {
+    0% {
+        background-color: transparent;
+    }
+    12.5% {
+        background-color: $yellow;
+    }
+    25% {
+        background-color: transparent;
+    }
+
+}
+
+@-webkit-keyframes rendering_color {
+    0% {
+        background-color: transparent;
+        /*border: 2px solid transparent;*/
+    }
+    20% {
+
+        /*border: 2px solid transparent;*/
+        background-color: transparent;
+    }
+    22% {
+        background-color: $green;
+        /*border: 2px solid red;*/
+    }
+    70% {
+        background-color: $green;
+    }
+    100% {
+        background-color: transparent;
+        /*border: 2px solid transparent;*/
+    }
+
+}
+
+@-webkit-keyframes rendering_color_cpu {
+    0% {
+        background-color: transparent;
+        /*border: 2px solid transparent;*/
+    }
+    20% {
+
+        /*border: 2px solid transparent;*/
+        background-color: transparent;
+    }
+    32% {
+        background-color: $purple;
+        /*border: 2px solid red;*/
+    }
+    45% {
+        background-color: $purple;
+    }
+    51% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: transparent;
+        /*border: 2px solid transparent;*/
+    }
+}
+
+@-webkit-keyframes rendering_color_gpu {
+    0% {
+        background-color: transparent;
+        /*border: 2px solid transparent;*/
+    }
+    30% {
+
+        /*border: 2px solid transparent;*/
+        background-color: transparent;
+    }
+    45% {
+        background-color: $green;
+        /*border: 2px solid red;*/
+    }
+    100% {
+        background-color: transparent;
+        /*border: 2px solid transparent;*/
+    }
+}
+
+@-webkit-keyframes rendering_screen {
+    0% {
+        border: 2px solid red;
+    }
+    100% {
+        border: 2px solid lightgray;
+    }
+
+}
+
+
+
+// injector
+// endinjector

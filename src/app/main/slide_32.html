@@ -1,0 +1,122 @@
+<div layout="column" class="slide slide-32">
+    <!--http://www.slideshare.net/HyungwookLee/android-chromium-rendering-pipeline-->
+
+    <div  flex="10">
+        <h4 style="margin-left: 10px; margin-top: 10px">Less DOM updates</h4>
+    </div>
+
+    <!--Sections-->
+    <div flex="10" layout="row" layout-align="center center">
+
+        <div style="text-align: center" flex="33">
+        </div>
+
+
+        <div class="" style="text-align: center" flex="33">
+            <h3>Rendering</h3>
+        </div>
+
+
+
+        <div style="text-align: center" flex="33">
+            <img src="/assets/images/react.png" style="max-height: 100px"/>
+        </div>
+
+    </div>
+
+
+    <div flex="5">
+    </div>
+
+    <!--Rendering-->
+    <div class="rendering-container" flex="35" layout="row" >
+
+        <div flex="33">
+        </div>
+
+
+        <!--Rendering process-->
+        <div flex="33" layout="column" layout-fill layout-align="center center">
+
+            <div flex layout="row" layout-margin layout-fill layout-align="center center">
+                <div flex="30" layout="row" layout-align="center start">
+                    <div class="dom-update">
+                    </div>
+                </div>
+                <div flex="60">
+                    <p>dom update</p>
+                </div>
+                <div flex>
+                    <i style="font-size: 2.5em" class="fa fa-long-arrow-left"></i>
+                </div>
+            </div>
+
+            <div flex layout="row" layout-margin layout-fill layout-align="center center">
+                <div flex="30" layout="row" layout-align="center start">
+                    <div class="layout">
+                    </div>
+                </div>
+
+                <div flex>
+                    <p>layout</p>
+                </div>
+            </div>
+
+            <div flex layout="row" layout-margin layout-fill layout-align="center center">
+                <div flex="30" layout="row" layout-align="center start">
+                    <div class="paint">
+                    </div>
+                </div>
+
+                <div flex>
+                    <p>paint</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--React-->
+        <div flex="33" layout="column" layout-fill layout-align="start center">
+            <p>React</p>
+            <p>Less DOM updates</p>
+            <p>Less paintings</p>
+        </div>
+        
+    </div>
+
+
+    <!--CPU-->
+    <div flex="15" layout="row">
+        <!--<div style="text-align: center" flex="33">-->
+            <!--<img style="width: auto; height: 100px" src="/assets/images/cpu-chip.jpg">-->
+        <!--</div>-->
+
+        <div class="cpu-gpu" style="text-align: center" layout-margin flex="66" layout="row" layout-align="space-around center">
+
+            <!--<div class="gpu" flex="50" layout="row" layout-align="end center">-->
+                <!--<div class="rendering-gpu">-->
+                <!--</div>-->
+                <!--<img style="width: 100px; height: 100px" src="/assets/images/gpu-chip.jpg">-->
+            <!--</div>-->
+
+            <!--<div class="cpu" flex="50" layout="row" layout-align="start center">-->
+                <!--<div class="rendering-cpu">-->
+                <!--</div>-->
+                <!--<div class="js">-->
+                <!--</div>-->
+                <!--<img style="width: auto; height: 100px" src="/assets/images/cpu-chip.jpg">-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <!--Screen-->
+
+    <div flex layout="row" layout-align="center center">
+        <div flex="33" layout="row" layout-align="center center">
+        </div>
+    </div>
+
+
+
+</div>

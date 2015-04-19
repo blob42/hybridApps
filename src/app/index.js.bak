@@ -1,0 +1,47 @@
+'use strict';
+
+angular.module('hybridApps', ['ngAnimate', 'ui.router', 'ngMaterial', 'cfp.hotkeys'])
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('slides', {
+        url: '/slides',
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl'
+      })
+      .state('slides.slide', {
+          url: '/:slideId',
+          templateUrl: function(params) {
+            return 'app/main/slide_' + params.slideId + '.html';
+          },
+          controller: 'slideCtrl'
+      });
+
+    $urlRouterProvider.otherwise('/slides/1');
+  })
+  .run(function(){
+
+    var macplus = require('pcejs-macplus')
+    var utils = require('pcejs-util')
+
+    angular.element(document).ready(function(){
+        // add a loading progress bar. not required, but good ux
+        var loadingStatus = utils.loadingStatus(document.querySelector('.pcejs-loading-status'))
+
+        macplus({
+            'arguments': ['-c','pce-config.cfg','-r'],
+            autoloadFiles: [
+                'macplus-pcex.rom',
+                'mac-plus.rom',
+                'hd1.qed',
+                'pce-config.cfg',
+            ],
+            print: console.log.bind(console),
+            printErr: console.warn.bind(console),
+            canvas: document.querySelector('.pcejs-canvas'),
+            monitorRunDependencies: function (remainingDependencies) {
+                loadingStatus.update(remainingDependencies)
+            },
+        })
+    })
+  })
+;
