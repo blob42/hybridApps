@@ -10,7 +10,8 @@
 
     <div style="height: 100%" flex="50" layout="column" layout-align="center center">
         <div flex="20" layout="column" layout-align="end center">
-            <h3><span ng-class="{processing: slide4.processing}">Processing</span> + Rendering</h3>
+
+            <h3><i style="margin-right: 20px" class="fa fa-refresh fa-spin"></i><span ng-class="{processing: slide4.processing}">Processing</span> + Rendering</h3>
             <div style="text-align: center" flex layout="row" layout-fill layout-align="center center">
                 <div flex="50">
                     <h4>{{interval}} ms</h4>
@@ -44,11 +45,11 @@
                 Slow Process
             </div>
         </div>
-        <div flex="20" style="width: 100%" layout="row" layout-align="center start">
-            <md-button ng-click="toggleProcessing()" class="md-primary">
-                Toggle Processing
-            </md-button>
-        </div>
+        <!--<div flex="20" style="width: 100%" layout="row" layout-align="center start">-->
+            <!--<md-button ng-click="toggleProcessing()" class="md-primary">-->
+                <!--Toggle Processing-->
+            <!--</md-button>-->
+        <!--</div>-->
     </div>
 
     <!--<div flex layout="row" layout-padding layout-align="center center">-->
