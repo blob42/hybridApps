@@ -10,27 +10,27 @@ angular.module('hybridApps')
               fibonacci: '=',
               delay: '='
           },
-          link: function($scope, $elm, $attr) {
+          link: function($scope, $element, $attr) {
 
-              var render = $elm;
-              var object = $('.object');
+              var render = $element;
+              var object = $element.children()[0];
 
               $scope.r_w = render[0].clientWidth;
               $scope.r_h = render[0].clientHeight;
 
-              $scope.o_w = object[0].clientWidth;
-              $scope.o_h = object[0].clientHeight;
+              $scope.o_w = object.clientWidth;
+              $scope.o_h = object.clientHeight;
 
 
               window.onresize = function(event) {
                   $scope.$apply(function(){
-                      var render = $elm;
-                      var object = $('.object');
+                      var render = $element;
+                      var object = $element.children()[0];
                       $scope.r_w = render[0].clientWidth;
                       $scope.r_h = render[0].clientHeight;
 
-                      $scope.o_w = object[0].clientWidth;
-                      $scope.o_h = object[0].clientHeight;
+                      $scope.o_w = object.clientWidth;
+                      $scope.o_h = object.clientHeight;
                   })
 
               }
